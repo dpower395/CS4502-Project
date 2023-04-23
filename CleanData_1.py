@@ -1,9 +1,27 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from dask import dataframe as df1
 
-df = pd.read_csv('parkingViolations2022.csv')
+req_col= ['Plate ID',
+    'Registration State',
+    'Plate Type',
+    'Issue Date',
+    'Violation Code',
+    'Vehicle Body Type',
+    'Vehicle Make',
+    'Issuing Agency',
+    'Vehicle Expiration Date',
+    'Violation Location',
+    'Violation Precinct',
+    'Violation Time',
+    'Violation County',
+    'House Number',
+    'Street Name',
+    'Vehicle Color',
+    'Vehicle Year',
+    'Violation Description'] 
+
+df = pd.read_csv('parkingViolations2022.csv', usecols=req_col)
 
 #converts Issue Date column to date format
 df['Issue Date'] = pd.to_datetime(df['Issue Date'])
@@ -13,13 +31,6 @@ df = df.replace(',','', regex=True)
 
 #converts strings to int for 'Vehicle Year' column
 df = df.astype({'Vehicle Year':'int'})
-
-#drop columns that have no values/are empty 
-df = df.drop(columns=['Violation Post Code', 
-    'Violation Description',
-    'No Standing or Stopping Violation',
-    'Hydrant Violation',
-    'Double Parking Violation'])
 
 #drop rows where:
 #registration plate is invalid(dataset uses 99 for invalid entries )
