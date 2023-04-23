@@ -39,14 +39,17 @@ def cleanTheStreets(dFrame):
     }
 
     # Ave / St, etc
-    ave = re.compile(r'(\s|^)av(\s|$)|(\s|^)ave(\s|$)|avenue', re.IGNORECASE) # checks for av, ave, etc
-    st = re.compile(r'(\s|^)st(\s|$)|(\s|^)street(\s|$)', re.IGNORECASE)
+    ave = re.compile(r'(\s|^)av(\s|$)|(\s|^)ave(\s|$)|(\s|^)avenu', re.IGNORECASE) # checks for av, ave, etc
+    st = re.compile(r'(\s|^)st(\s|$)|(\s|^)street(\s|$)|(\s|^)stree(\s|$)|(\s|^)stre(\s|$)', re.IGNORECASE)
     rd = re.compile(r'(\s|^)rd(\s|$)|(\s|^)road(\s|$)', re.IGNORECASE)
-    blvd = re.compile(r'blvd|boulevard', re.IGNORECASE)
+    blvd = re.compile(r'(\s|^)blvd|(\s|^)boulevard|(\s|^)boul(\s|$)|(\s|^)bou(\s|$)|(\s|^)bouleva(\s|$)|(\s|^)boulevar(\s|$)', re.IGNORECASE)
     pl = re.compile(r'(\s|^)pl(\s|$)|(\s|^)place(\s|$)', re.IGNORECASE)
     drive = re.compile(r'(\s|^)dr(\s|$)|(\s|^)drive(\s|$)', re.IGNORECASE)
     walk = re.compile(r'(\s|^)walk(\s|$)', re.IGNORECASE)
     br = re.compile(r'(\s|^)br(\s|$)|(\s|^)branch(\s|$)', re.IGNORECASE)
+    pkwy = re.compile(r'(\s|^)pkwy(\s|$)|(\s|^)parkway(\s|$)', re.IGNORECASE)
+    plaza = re.compile(r'(\s|^)plaz(\s|$)|(\s|^)plaza(\s|$)', re.IGNORECASE)
+    square = re.compile(r'(\s|^)sq(\s|$)|(\s|^)square(\s|$)|(\s|^)squar(\s|$)', re.IGNORECASE)
 
     typeMap = {
         ave: "AVE",
@@ -56,7 +59,10 @@ def cleanTheStreets(dFrame):
         pl: "PL",
         drive: "DRIVE",
         walk: "WALK",
-        br: "BRANCH"
+        br: "BRANCH",
+        pkwy: "PKWY",
+        plaza: "PLAZA",
+        square: "SQUARE"
     }
 
     # Name
@@ -68,8 +74,10 @@ def cleanTheStreets(dFrame):
 
     for index, row in dFrame.iterrows():
 
-        curVal = row['Street Name'].lower()
-        origVal = curVal
+        curVal = row['Street Name']
+
+        if pd.isnull(curVal):
+            curVal = ""
         
         # Find out if any N E S W parts are in the name
         direction = ""
@@ -158,6 +166,9 @@ countyMap = {
 def cleanTheCounties(dFrame):
     for index, row in dFrame.iterrows():
         curVal = row['Violation County']
+        if pd.isnull(curVal):
+            curVal = ""
+
         newVal = countyMap[curVal]
         dFrame['Violation County'][index] = newVal
     
