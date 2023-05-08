@@ -30,4 +30,5 @@ Any effort made to increase awareness about the restrictions of passenger vehicl
 Another potential application of our gathered data could be aimed at reducing the violations for parking code 36 (exceeding the posted speed limit in or near a designated school zone), which is the most common violation for both vehicles registered within and out of New York. Since this violation occurs at a significantly higher rate than any other violation, focusing on this specific type of violation could have the highest potential impact in reducing overall parking violations.
 
 ### Presentation and Report
-The final report and presentation can be find in the repository files above
+Presentation: https://github.com/dpower395/CS4502-Project/raw/main/07_NYCParkingViolations_Part6_Video.mp4
+Report: https://github.com/dpower395/CS4502-Project/raw/main/07_NYCParkingViolations_Part4.pdf
