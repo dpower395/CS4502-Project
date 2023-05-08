@@ -10,13 +10,15 @@ This project seeks to examine parking violations in New York City’s five borou
 Which streets or locations have the most number of parking tickets?<br />
 What are the most common violation codes issued? Is there a correlation for certain types of vehicles?<br />
 Which counties have the highest number of parking violations?<br />
-When during the year are most tickets likely to be issued??<br />
+When during the year are most tickets likely to be issued?<br />
+Which make of passenger vehicle is most likely to be ticketed?<br />
 
 ### Answers:
 In the Manhattan borough, E West 14th street is by far the most common street for receiving parking violations.<br />
 The most common violation codes are 36 (Exceeding the posted speed limit in or near a designated school zone) and 21 (Street Cleaning).<br />
 Predictably, Manhattan has the highest rate of parking violations.<br />
 Parking violations are enforced regularly throughout the year, though a regular drop at certain parts of the week / year are due to days when violations are not enforced.<br />
+There is a statistically significant difference between how often foreign and domestic cars are ticketed, with foreign cars being ticketed disproportionately more than they are registered in NY. This could be an issue with our data or an enforcement bias.<br />
 
 ### Applications:
 Any effort made to increase awareness about the restrictions of passenger vehicles along stretches of West 14th Street might go a long way towards preventing negligent parking.
