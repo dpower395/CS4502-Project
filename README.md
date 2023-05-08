@@ -19,6 +19,8 @@ Predictably, Manhattan has the highest rate of parking violations.<br />
 Parking violations are enforced regularly throughout the year, though a regular drop at certain parts of the week / year are due to days when violations are not enforced.<br />
 
 ### Applications:
+Any effort made to increase awareness about the restrictions of passenger vehicles along stretches of West 14th Street might go a long way towards preventing negligent parking.
 
+Another potential application of our gathered data could be aimed at reducing the violations for parking code 36 (exceeding the posted speed limit in or near a designated school zone), which is the most common violation for both vehicles registered within and out of New York. Since this violation occurs at a significantly higher rate than any other violation, focusing on this specific type of violation could have the highest potential impact in reducing overall parking violations.
 
 The final report and presentation can be find in the repository files above
