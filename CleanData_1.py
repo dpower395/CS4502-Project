@@ -17,6 +17,7 @@ req_col= ['Plate ID',
     'Violation County',
     'House Number',
     'Street Name',
+    'Summons Number',
     'Vehicle Color',
     'Vehicle Year',
     'Violation Description'] 
@@ -49,5 +50,6 @@ df= df[(df['Registration State'] != "99")
     & (df['Vehicle Year'] <= 2022)]
 
 pd.set_option('display.max_columns', None)
+
 print('Number of Rows: ' + str(len(df)))
 print(df.head(1))
