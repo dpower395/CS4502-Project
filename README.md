@@ -1,6 +1,10 @@
 # CS4502-Project
 Repository for Data Mining Project Spring 2023
+### Project Title: 
+An Analysis of New York City’s Parking Violations for Fiscal Year 2022
 
+
+### Team members:
 Sebastian Ojeda, Dylan Power, Derek Watson, Henry Wo
 
 ### Project Description:
